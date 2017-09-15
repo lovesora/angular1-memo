@@ -33,8 +33,16 @@ let requireConfig = {
             deps: [
                 'angular',
                 'angular-ui-router',
-                'angular-require'
-            ]
+                'angular-require',
+                // 只依赖了css文件，就不用在paths里面再引入js了，paths里面只能引js
+                'css!//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
+                'css!styles/standard.css',
+                'css!styles/header.css',
+                'css!styles/footer.css',
+                'css!styles/left-sidebar.css',
+                'css!styles/container.css'
+            ],
+            exports: 'app'
         }
     }
 };
@@ -42,10 +50,10 @@ let requireConfig = {
 require.config(requireConfig);
 
 //require错误处理,否则默认会去访问官网,国外很慢
-require.onError = function(err) {
+require.onError = function (err) {
     console.log('require error:', err, arguments);
 };
 
-requirejs(['app'], function() {
+requirejs(['app'], function () {
     angular.bootstrap(document, ['app']);
 });

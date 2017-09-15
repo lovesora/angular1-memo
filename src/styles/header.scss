@@ -1,0 +1,11 @@
+.app-{
+    &header {
+        &__title {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            width: 100vw;
+            height: 60px;
+        }
+    }
+}

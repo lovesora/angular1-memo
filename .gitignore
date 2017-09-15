@@ -58,4 +58,14 @@ typings/
 .env
 
 # bower
-src/public
+dist
+
+# sourcemap
+src/**/*.map
+src/**/*.css
+
+# sass
+.sass-cache
+
+# vscode
+.vscode

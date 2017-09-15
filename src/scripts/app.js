@@ -1,7 +1,7 @@
-define(function() {
+define(function () {
     let app = angular.module('app', ['ngRequire', 'ui.router']);
 
-    app.config(['$urlRouterProvider', '$stateProvider', '$requireProvider', function($urlRouterProvider, $stateProvider, $requireProvider) {
+    app.config(['$urlRouterProvider', '$stateProvider', '$requireProvider', function ($urlRouterProvider, $stateProvider, $requireProvider) {
         // 使用when来对一些不合法的路由进行重定向
         $urlRouterProvider.otherwise('/');
 
