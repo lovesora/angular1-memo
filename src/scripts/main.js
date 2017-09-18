@@ -3,7 +3,9 @@ let requireConfig = {
     baseUrl: './',
     paths: {
         'app': ['scripts/app'],
-        
+        'animation': ['scripts/animate'],
+        'left-sidebar': ['directives/left-sidebar/left-sidebar.directive'],
+
         'angular': ['//cdn.bootcss.com/angular.js/1.4.6/angular.min', BOWER_DIR + 'angular/angular.min'],
         'angular-ui-router': ['//cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min', BOWER_DIR + 'angular-ui-router/release/angular-ui-router.min'],
         'angular-require': [BOWER_DIR + 'angular-require/angular-require.min']
@@ -21,7 +23,7 @@ let requireConfig = {
             deps: [
                 'angular'
             ],
-            exports: 'ui-router'
+            exports: 'angular-ui-router'
         },
         'angular-require': {
             deps: [
@@ -29,17 +31,24 @@ let requireConfig = {
             ],
             exports: 'angular-require'
         },
+        'left-sidebar': {
+            deps: [
+                'css!directives/left-sidebar/left-sidebar.css'
+            ]
+        },
         'app': {
             deps: [
                 'angular',
                 'angular-ui-router',
                 'angular-require',
-                // 只依赖了css文件，就不用在paths里面再引入js了，paths里面只能引js
-                'css!//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
+                
+                // animatecss jquery plugin
+                'animation',
+
+                'css!//cdn.bootcss.com/animate.css/3.5.2/animate.min.css',
                 'css!styles/standard.css',
                 'css!styles/header.css',
                 'css!styles/footer.css',
-                'css!styles/left-sidebar.css',
                 'css!styles/container.css'
             ],
             exports: 'app'
@@ -54,6 +63,6 @@ require.onError = function (err) {
     console.log('require error:', err, arguments);
 };
 
-requirejs(['app'], function () {
+requirejs(['app', 'left-sidebar'], function () {
     angular.bootstrap(document, ['app']);
 });

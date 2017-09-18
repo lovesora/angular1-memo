@@ -9,6 +9,8 @@
         <title>Angular1.x Boilerplate</title>
         <meta name="description" content="angular1.x boilerplate">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -16,10 +18,13 @@
         <![endif]-->
         <div ng-include="'views/header.html'"></div>
         <div class="app-container">
-            <div class="app-left-sidebar" ng-include="'views/left-sidebar.html'"></div>
+            <left-sidebar class="app-container__left-sidebar"></left-sidebar>
             <div class="app-container__content" ui-view></div>
         </div>
         <div ng-include="'views/footer.html'"></div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script type="text/javascript" data-main="scripts/main.js" src="public/requirejs/require.js"></script>
     </body>
 </html>

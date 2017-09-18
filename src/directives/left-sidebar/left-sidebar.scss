@@ -1,0 +1,67 @@
+@import '../../styles/variable';
+
+
+left-sidebar {
+    // $bgColor: #444;
+    $bgColor: lighten($primary-color, 2%);
+    // $bgHoverColor: #666;
+    $bgHoverColor: $primary-color-dark;
+    // $borderLeftColor: #0ff;
+    $borderLeftColor: $accent-color;
+
+    transition: width $anime-duration-primary;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            a {
+                border-left: 2px transparent solid;
+                color: $primary-color-text;
+                display: block;
+                transition: border-left $anime-duration-primary, background-color $anime-duration-primary;
+                padding: 6px;
+            }
+            a:hover {
+                background-color: $bgHoverColor;
+                border-left: 2px $borderLeftColor solid;
+                color: $primary-color-text;
+                text-decoration: none;
+            }
+            a.active {
+                background-color: $bgHoverColor;
+                border-left: 2px $borderLeftColor solid;
+            }
+        }
+    }
+
+    > ul {
+        background-color: $bgColor;
+        height: 100%;
+    }
+
+    .left-sidebar__arrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        display: flex;
+        vertical-align: middle;
+        color: #fff;
+        align-items: center;
+        cursor: w-resize;
+        width: 10px;
+        padding-left: 2px;
+        padding-right: 2px;
+        background-color: darken($primary-color, 2%);
+        border-radius: 10px 0 0 10px;
+
+        transition: border-radius $anime-duration-primary;
+
+        > div {
+            transition:transform $anime-duration-primary
+        }
+    }
+}

@@ -6,12 +6,20 @@ define(function () {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('app', {
-                url: '/',
-                controller: 'HomeController',
+            .state('home', {
+                url: '',
                 templateUrl: 'views/home/home.html',
+                controller: 'HomeController',
                 resolve: {
                     deps: $requireProvider.requireJS(['views/home/home.controller', 'css!views/home/home.css'])
+                }
+            })
+            .state('collapse', {
+                url: '/collapse',
+                templateUrl: 'views/collapse/collapse.html',
+                contorller: 'CollapseController',
+                resolve: {
+                    deps: $requireProvider.requireJS(['views/collapse/collapse.controller', 'css!views/collapse/collapse.css'])
                 }
             })
             .state('404', {
