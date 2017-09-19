@@ -24,7 +24,7 @@ class Configs {
          * gulp-connect端口号
          * @type {Number}
          */
-        this.port = 8000;
+        this.port = 8880;
 
         /**
          * 是否启用Sourcemaps
@@ -71,7 +71,16 @@ class Configs {
         /**
          * vendor目录
          */
-        this.vendor = 'vendor';
+        this.vendor = `${this.distDir}/public`;
+
+        this.bs = {
+            port: 8888,
+            proxy: `http://localhost:${this.port}`,
+            open: false,
+            reloadDebounce: 300,
+            files: ['dist/**/*.*', '!dist/public/**/*.*', '!dist/**/*.map'],
+            sockets: false
+        };
     }
 }
 
@@ -293,7 +302,7 @@ class Task {
             combiner.obj([
                 gulp.src(p.srcPath),
                 $.sourcemaps.init(),
-                $.postcss([autoprefixer()]),
+                $.postcss([autoprefixer({browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']})]),
                 $.cleanCss({
                     compatibility: 'ie8'
                 }),
@@ -363,6 +372,11 @@ gulp.task('connect', () => {
     });
 });
 
+gulp.task('bs', () => {
+    let browserSync = require('browser-sync').create();
+    browserSync.init(configs.bs);
+});
+
 gulp.task('init', () => {
     new Task()
         .html({
@@ -383,4 +397,4 @@ gulp.task('init', () => {
         });
 });
 
-gulp.task('default', ['init', 'connect', 'watch']);
+gulp.task('default', $.sequence(['init'], ['connect'], ['bs'], ['watch']));

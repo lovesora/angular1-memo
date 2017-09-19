@@ -1,17 +1,38 @@
 define(['app'], function (app) {
     app.directive('leftSidebar', [function () {
         let config = [{
-            title: 'Collapse',
+            title: 'Button',
+            href: '/button',
             children: [{
-                title: 'Base',
-                href: '/collapse',
-            }, {
-                title: 'Advanced',
+                title: 'Button Group',
+                href: '/button/group'
             }]
         }, {
             title: 'Dropdown',
+            href: '/dropdown'
+        }, {
+            title: 'Collapse',
+            href: '/collapse'
+        }, {
+            title: 'Carousel',
+            href: '/carousel',
+            children: [{
+                title: 'Swiper',
+                href: '/carousel/swiper'
+            }]
         }];
+        
+        let style = {
+            ls: {
+                width: '200px'
+            },
+            arrow: {
+                width: '10px'
+            }
+        };
+        
 
+        // 获取html template
         let getTpl = (data, deep = 0) => {
             if (!Array.isArray(data)) {
                 return '';
@@ -24,12 +45,58 @@ define(['app'], function (app) {
             tpl += '</ul>';
             return tpl;
         };
-
         let appendCollapse = (str) => {
-            let collapse = `<div ng-click="onClickToggle()" class="left-sidebar__arrow"><div><i class="fa fa-angle-left" aria-hidden="true"></i><div></div>`;
+            let collapse = '<div ng-click="onClickToggle()" class="left-sidebar__arrow"><div><i class="fa fa-angle-left" aria-hidden="true"></i><div></div>';
             return str + collapse;
         };
 
+        // 动画
+        let animation = {
+            collapse() {
+                let ls = $('left-sidebar'); 
+
+                // 改变<left-sidebar></left-sidebar>宽度
+                ls.css('width', style.arrow.width)
+                    .css('border-radius', '0 10px 10px 0');
+
+                // 菜单动画
+                ls.find('> ul').removeClass('animated fadeInLeft').addClass('animated fadeOutLeft');
+
+                // 箭头栏动画
+                ls.find('.left-sidebar__arrow')
+                    .css('border-radius', '0 10px 10px 0')
+                    .css('cursor', 'e-resize');
+
+                // 箭头动画
+                ls.find('.left-sidebar__arrow > div').css('transform', 'rotate(180deg)'); 
+
+                // .app-container__content内容动画
+                $('.app-container__content').css('left', style.arrow.width);
+            },
+            expand() {
+                let ls = $('left-sidebar');
+                
+                // 改变<left-sidebar></left-sidebar>宽度
+                ls.css('width', style.ls.width)
+                    .css('border-radius', '0');
+
+                // 菜单动画
+                ls.find('> ul').removeClass('animated fadeOutLeft').addClass('animated fadeInLeft');
+
+                // 箭头栏动画
+                ls.find('.left-sidebar__arrow')
+                    .css('border-radius', '10px 0 0 10px')
+                    .css('cursor', 'w-resize');
+
+                // 箭头动画
+                ls.find('.left-sidebar__arrow > div').css('transform', 'rotate(0deg)'); 
+
+                // .app-container__content内容动画
+                $('.app-container__content').css('left', style.ls.width);  
+            }
+        };
+        
+        
         return {
             scope: true,
             controller: function ($scope, $element, $attrs) {
@@ -47,27 +114,12 @@ define(['app'], function (app) {
                 };
 
                 $scope.onClickToggle = () => {
-                    let ls = $('left-sidebar');
                     if (isCollapsed) {
                         isCollapsed = false;
-                        ls.css('width', '200px');
-                        ls.find('> ul').removeClass('animated fadeOutLeft').addClass('animated fadeInLeft');
-    
-                        ls.find('.left-sidebar__arrow').css('border-radius', '10px 0 0 10px');
-    
-                        ls.find('.left-sidebar__arrow > div').css('transform', 'rotate(0deg)'); 
-    
-                        $('.app-container__content').css('left', '200px'); 
+                        animation.expand();
                     } else {
                         isCollapsed = true;
-                        ls.css('width', '10px');
-                        ls.find('> ul').removeClass('animated fadeInLeft').addClass('animated fadeOutLeft');
-    
-                        ls.find('.left-sidebar__arrow').css('border-radius', '0 10px 10px 0');
-    
-                        ls.find('.left-sidebar__arrow > div').css('transform', 'rotate(180deg)'); 
-    
-                        $('.app-container__content').css('left', '10px');
+                        animation.collapse();
                     }
                 };
             },

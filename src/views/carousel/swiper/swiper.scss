@@ -1,0 +1,13 @@
+@import '../../../styles/variable';
+
+.swiper {
+    &-container {
+        height: 300px;
+        text-align: center;
+        color: $primary-color-text;
+    }
+
+    &-slide {
+        background-color: $primary-color;
+    }
+}

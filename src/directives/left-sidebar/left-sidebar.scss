@@ -9,8 +9,16 @@ left-sidebar {
     // $borderLeftColor: #0ff;
     $borderLeftColor: $accent-color;
 
-    transition: width $anime-duration-primary;
-    
+    transition: width $primary-animation-duration;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    overflow: scroll; 
+    box-shadow: 2px 0 5px rgba(0,0,0,.26);
+
+
     ul {
         margin: 0;
         padding: 0;
@@ -21,7 +29,7 @@ left-sidebar {
                 border-left: 2px transparent solid;
                 color: $primary-color-text;
                 display: block;
-                transition: border-left $anime-duration-primary, background-color $anime-duration-primary;
+                transition: border-left $primary-animation-duration, background-color $primary-animation-duration;
                 padding: 6px;
             }
             a:hover {
@@ -57,11 +65,12 @@ left-sidebar {
         padding-right: 2px;
         background-color: darken($primary-color, 2%);
         border-radius: 10px 0 0 10px;
+    
 
-        transition: border-radius $anime-duration-primary;
+        transition: border-radius $primary-animation-duration;
 
         > div {
-            transition:transform $anime-duration-primary
+            transition:transform $primary-animation-duration
         }
     }
 }

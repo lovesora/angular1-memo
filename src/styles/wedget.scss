@@ -1,0 +1,43 @@
+@import './variable';
+
+.wedget {
+    &__box {
+        border-radius: 2px 2px 0 0;
+        border-top: 2px solid $primary-color;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+
+        &-title {
+            padding: $primary-padding;
+            border-bottom: 1px solid lighten($divider-color, 16%);
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        &-content {
+            padding: $primary-padding;
+
+            .wedget {
+                &__box {
+                    margin-bottom: $primary-margin;
+
+                    &-title {
+                        h1 {
+                            font-size: 1.6rem;
+                            color: lighten($primary-text-color, 16%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__quote {
+        border-radius: 2px 0 0 2px;
+        border-left: 2px solid $accent-color; 
+        padding: $primary-padding - 3px;
+        margin: $primary-margin - 3px;
+        margin-left: 0;
+    }
+}

@@ -1,7 +1,12 @@
+@import './variable';
+
 .app {
     &-footer {
         &__copyright {
             text-align: center;
+            padding: $primary-padding;
+            color: $primary-color-text;
+            background-color: $primary-color;
         }
     }
 }

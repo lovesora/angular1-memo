@@ -3,12 +3,19 @@ let requireConfig = {
     baseUrl: './',
     paths: {
         'app': ['scripts/app'],
-        'animation': ['scripts/animate'],
         'left-sidebar': ['directives/left-sidebar/left-sidebar.directive'],
-
+        
         'angular': ['//cdn.bootcss.com/angular.js/1.4.6/angular.min', BOWER_DIR + 'angular/angular.min'],
         'angular-ui-router': ['//cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min', BOWER_DIR + 'angular-ui-router/release/angular-ui-router.min'],
-        'angular-require': [BOWER_DIR + 'angular-require/angular-require.min']
+        'angular-require': [BOWER_DIR + 'angular-require/angular-require.min'],
+        
+        'jquery': ['//cdn.bootcss.com/jquery/3.2.1/jquery.slim.min'],
+        'popper': ['//cdn.bootcss.com/popper.js/1.12.5/umd/popper.min'],
+        'animation': ['scripts/animation'],
+
+        'bootstrap': ['//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap'],
+
+        'swiper': ['//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min']
     },
     map: {
         '*': {
@@ -31,6 +38,21 @@ let requireConfig = {
             ],
             exports: 'angular-require'
         },
+        'bootstrap': {
+            deps: [
+                'popper',
+                'jquery',
+                'css!//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
+                'css!//cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
+            ]
+        },
+        'swiper': {
+            deps: [
+                'jquery',
+                'css!//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css'
+            ],
+            exports: 'swiper'
+        },
         'left-sidebar': {
             deps: [
                 'css!directives/left-sidebar/left-sidebar.css'
@@ -44,12 +66,17 @@ let requireConfig = {
                 
                 // animatecss jquery plugin
                 'animation',
-
                 'css!//cdn.bootcss.com/animate.css/3.5.2/animate.min.css',
+
+                // standard
                 'css!styles/standard.css',
+                // layout
                 'css!styles/header.css',
                 'css!styles/footer.css',
-                'css!styles/container.css'
+                'css!styles/container.css',
+
+                // wedget
+                'css!styles/wedget.css'
             ],
             exports: 'app'
         }
