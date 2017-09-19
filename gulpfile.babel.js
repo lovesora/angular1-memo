@@ -372,6 +372,7 @@ gulp.task('connect', () => {
     });
 });
 
+// HMR css
 gulp.task('bs', () => {
     let browserSync = require('browser-sync').create();
     browserSync.init(configs.bs);
@@ -397,4 +398,5 @@ gulp.task('init', () => {
         });
 });
 
+// gulp-sequence顺序执行，前一个task执行完成后再执行下一个
 gulp.task('default', $.sequence(['init'], ['connect'], ['bs'], ['watch']));
