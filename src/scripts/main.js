@@ -14,11 +14,13 @@ let requireConfig = {
         'angular': ['//cdn.bootcss.com/angular.js/1.4.6/angular.min', BOWER_DIR + 'angular/angular.min'],
         'angular-ui-router': ['//cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min', BOWER_DIR + 'angular-ui-router/release/angular-ui-router.min'],
         'angular-require': [BOWER_DIR + 'angular-require/angular-require.min'],
-        
+        'angular-ui-bootstrap': ['//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min', BOWER_DIR + 'angular-bootstrap/ui-bootstrap-tpls.min'],
+
         // bootstrap
         'jquery': ['//cdn.bootcss.com/jquery/3.2.1/jquery.slim.min'],
         'popper': ['//cdn.bootcss.com/popper.js/1.12.5/umd/popper.min'],
-        'bootstrap': ['//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap'],
+        'bootstrap': ['//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min'],
+        'bootstrap3': ['//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min'],
 
         // animation
         'animation': ['scripts/animation'],
@@ -46,14 +48,26 @@ let requireConfig = {
             ],
             exports: 'angular-require'
         },
+        'angular-ui-bootstrap': {
+            deps: [
+                'angular',
+            ],
+            exports: 'angular-ui-bootstrap'
+        },
+        
 
         // bootstrap
         'bootstrap': {
             deps: [
-                'popper',
                 'jquery',
                 'css!//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
                 'css!//cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css'
+            ]
+        },
+        'bootstrap3': {
+            deps: [
+                'jquery',
+                'css!//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'
             ]
         },
 
@@ -76,8 +90,9 @@ let requireConfig = {
             deps: [
                 // angular
                 'angular',
-                'angular-ui-router',
                 'angular-require',
+                'angular-ui-router',
+                'angular-ui-bootstrap',
                 
                 // animatecss jquery plugin
                 'animation',

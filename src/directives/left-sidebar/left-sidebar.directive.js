@@ -17,6 +17,9 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
             title: 'Collapse',
             href: '/collapse'
         }, {
+            title: 'Modal',
+            href: '/modal'
+        }, {
             title: 'Carousel',
             href: '/carousel',
             children: [{

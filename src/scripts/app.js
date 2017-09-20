@@ -2,7 +2,8 @@ define(['popper'], function (Popper) {
     window.Popper = Popper;
     require(['bootstrap']);
 
-    let app = angular.module('app', ['ngRequire', 'ui.router']);
+    // 模块依赖
+    let app = angular.module('app', ['ngRequire', 'ui.router', 'ui.bootstrap']);
 
     app.config(['$urlRouterProvider', '$stateProvider', '$requireProvider', function ($urlRouterProvider, $stateProvider, $requireProvider) {
         // 使用when来对一些不合法的路由进行重定向
@@ -42,6 +43,16 @@ define(['popper'], function (Popper) {
                 controller: 'SelectController',
                 resolve: {
                     deps: $requireProvider.requireJS(['views/select/select.controller'])
+                }
+            })
+
+            // modal
+            .state('modal', {
+                url: '/modal',
+                templateUrl: 'views/modal/modal.html',
+                controller: 'ModalController',
+                resolve: {
+                    deps: $requireProvider.requireJS(['views/modal/modal.controller'])
                 }
             })
 
