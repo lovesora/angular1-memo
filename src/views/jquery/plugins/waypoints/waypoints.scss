@@ -1,0 +1,13 @@
+@import '../../../../styles/variable';
+
+.waypoints {
+    &__basis {
+        height: 1000px;
+        width: 100%;
+        background-color: $accent-color;
+        margin-bottom: $primary-margin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

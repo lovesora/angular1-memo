@@ -1,5 +1,8 @@
+@import './variable';
+
 * {
     box-sizing: border-box;
+    color: $primary-color-text;
 }
 
 h1,

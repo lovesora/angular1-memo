@@ -24,7 +24,10 @@ let requireConfig = {
 
         // animation
         'animation': ['scripts/animation'],
-        'swiper': ['//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min']
+        'swiper': ['//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min'],
+
+        // jquery-plugin
+        'waypoints': [BOWER_DIR + 'waypoints/lib/jquery.waypoints.min']
     },
     map: {
         '*': {
@@ -84,6 +87,14 @@ let requireConfig = {
             ],
             exports: 'swiper'
         },
+        
+        // jquery plugins
+        'waypoints': {
+            deps: [
+                'jquery'
+            ],
+            exports: 'waypoints'
+        },
 
         // app
         'app': {
@@ -94,9 +105,6 @@ let requireConfig = {
                 'angular-ui-router',
                 'angular-ui-bootstrap',
                 
-                // animatecss jquery plugin
-                'animation',
-
                 // standard
                 'css!styles/standard.css',
                 // layout
@@ -119,6 +127,6 @@ require.onError = function (err) {
     console.log('require error:', err, arguments);
 };
 
-requirejs(['app', 'left-sidebar'], function () {
+requirejs(['app', 'animation', 'left-sidebar'], function () {
     angular.bootstrap(document, ['app']);
 });

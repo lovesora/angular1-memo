@@ -29,6 +29,7 @@
     "animate.css": "^3.5.2"
   },
   "devDependencies": {
-    "angular-bootstrap": "^2.5.0"
+    "angular-bootstrap": "^2.5.0",
+    "waypoints": "^4.0.1"
   }
 }

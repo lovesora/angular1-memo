@@ -12,7 +12,7 @@ define(['popper'], function (Popper) {
         $stateProvider
             // home
             .state('home', {
-                url: '',
+                url: '/',
                 templateUrl: 'views/home/home.html',
                 controller: 'HomeController',
                 resolve: {
@@ -78,7 +78,18 @@ define(['popper'], function (Popper) {
                 }
             })
 
-            
+
+
+            // jquery plugins
+            .state('jquery-waypoints', {
+                url: '/jquery/plugins/waypoints',
+                templateUrl: 'views/jquery/plugins/waypoints/waypoints.html',
+                controller: 'JqueryWaypointsController',
+                resolve: {
+                    deps: $requireProvider.requireJS(['views/jquery/plugins/waypoints/waypoints.controller', 'css!views/jquery/plugins/waypoints/waypoints.css'])
+                }
+            })
+                
             // error
             .state('404', {
                 url: '/404',

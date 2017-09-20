@@ -26,6 +26,17 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
                 title: 'Swiper',
                 href: '/carousel/swiper'
             }]
+        }, {
+            title: 'Jquery',
+            href: '/jquery',
+            children: [{
+                title: 'Plugins',
+                href: '/jquery/plugins',
+                children: [{
+                    title: 'Waypoints',
+                    href: '/jquery/plugins/waypoints'
+                }]
+            }]
         }];
         
         let style = {
