@@ -1,4 +1,4 @@
-define(['app'], function (app) {
+define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
     app.directive('leftSidebar', [function () {
         let config = [{
             title: 'Button',

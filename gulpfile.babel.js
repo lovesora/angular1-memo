@@ -73,6 +73,9 @@ class Configs {
          */
         this.vendor = `${this.distDir}/public`;
 
+        /**
+         * browser-sync配置
+         */
         this.bs = {
             port: 8888,
             proxy: `http://localhost:${this.port}`,
@@ -368,7 +371,7 @@ gulp.task('connect', () => {
     $.connect.server({
         port: configs.port,
         root: `./${configs.distDir}`,
-        livereload: true
+        livereload: false
     });
 });
 
