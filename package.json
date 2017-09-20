@@ -7,6 +7,7 @@
     "clean": "find ./src | grep -E '\\.(map|css)$' | xargs rm -rf",
     "prestart": "npm run clean",
     "start": "gulp",
+    "build": "yarn install && bower install && gulp init",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

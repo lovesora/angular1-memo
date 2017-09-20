@@ -38,6 +38,10 @@ left-sidebar {
                 color: $primary-color-text;
                 text-decoration: none;
             }
+            a:focus {
+                color: $primary-color-text;
+                text-decoration: none;
+            }
             a.active {
                 background-color: $bgHoverColor;
                 border-left: 2px $borderLeftColor solid;
@@ -65,8 +69,6 @@ left-sidebar {
         padding-right: 2px;
         background-color: darken($primary-color, 2%);
         border-radius: 10px 0 0 10px;
-    
-
         transition: border-radius $primary-animation-duration;
 
         > div {
