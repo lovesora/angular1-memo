@@ -11,6 +11,9 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
             title: 'Dropdown',
             href: '/dropdown'
         }, {
+            title: 'Select',
+            href: '/select'
+        }, {
             title: 'Collapse',
             href: '/collapse'
         }, {

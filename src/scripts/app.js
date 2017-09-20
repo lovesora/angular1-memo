@@ -35,6 +35,16 @@ define(['popper'], function (Popper) {
                 templateUrl: 'views/dropdown/dropdown.html'
             })
 
+            // select
+            .state('select', {
+                url: '/select',
+                templateUrl: 'views/select/select.html',
+                controller: 'SelectController',
+                resolve: {
+                    deps: $requireProvider.requireJS(['views/select/select.controller'])
+                }
+            })
+
             // collapse
             .state('collapse', {
                 url: '/collapse',

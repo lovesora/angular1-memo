@@ -1,0 +1,16 @@
+<div class="wedget__box">
+    <div class="wedget__box-title">
+        <h1>Select</h1>
+    </div>
+    <div class="wedget__box-content">
+        <div class="wedget__box">
+            <div class="wedget__box-title">
+                <h1>Basis</h1>
+            </div>
+            <div class="wedget__box-content">
+                <select class="form-control" ng-change="onSelectChange()" ng-model="select" ng-options="select.id as select.name for select in selectList">
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
