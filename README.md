@@ -1,8 +1,7 @@
-# angular1-memo
-angular1.4.6 tech stack memo[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
+# angular1-memo [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() 
+angular1.4.6 tech stack memo
 
 ## Installation
-
 ### Requirement
 1. requirejs 2.3.5
 2. angular 1.4.6
