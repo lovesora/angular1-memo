@@ -37,6 +37,13 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
                     href: '/jquery/plugins/waypoints'
                 }]
             }]
+        }, {
+            title: 'CSS3 Animation',
+            href: '/css3',
+            children: [{
+                title: 'Icon',
+                href: '/css3/icon'
+            }]
         }];
         
         let style = {

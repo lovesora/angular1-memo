@@ -89,6 +89,15 @@ define(['popper'], function (Popper) {
                     deps: $requireProvider.requireJS(['views/jquery/plugins/waypoints/waypoints.controller', 'css!views/jquery/plugins/waypoints/waypoints.css'])
                 }
             })
+
+            // css3 animation
+            .state('css3-icon', {
+                url: '/css3/icon',
+                templateUrl: 'views/css3/icon/icon.html',
+                resolve: {
+                    deps: $requireProvider.requireJS(['css!views/css3/icon/icon.css'])
+                }
+            })
                 
             // error
             .state('404', {

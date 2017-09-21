@@ -15,7 +15,6 @@ left-sidebar {
     top: 0;
     bottom: 0;
     width: 200px;
-    overflow: scroll; 
     box-shadow: 2px 0 5px rgba(0,0,0,.26);
 
 
@@ -51,6 +50,7 @@ left-sidebar {
 
     > ul {
         background-color: $bgColor;
+        overflow: scroll; 
         height: 100%;
     }
 

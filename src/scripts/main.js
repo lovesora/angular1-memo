@@ -27,7 +27,7 @@ let requireConfig = {
         'swiper': ['//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min'],
 
         // jquery-plugin
-        'waypoints': [BOWER_DIR + 'waypoints/lib/jquery.waypoints.min']
+        'waypoints': ['//cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min', BOWER_DIR + 'waypoints/lib/jquery.waypoints.min']
     },
     map: {
         '*': {
