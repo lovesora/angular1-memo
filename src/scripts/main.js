@@ -9,6 +9,7 @@ let requireConfig = {
 
         // directives
         'left-sidebar': ['directives/left-sidebar/left-sidebar.directive'],
+        'ripple-icon': ['directives/ripple-icon/ripple-icon.directive'],
 
         // angular
         'angular': ['//cdn.bootcss.com/angular.js/1.4.6/angular.min', BOWER_DIR + 'angular/angular.min'],
@@ -27,7 +28,10 @@ let requireConfig = {
         'swiper': ['//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min'],
 
         // jquery-plugin
-        'waypoints': ['//cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min', BOWER_DIR + 'waypoints/lib/jquery.waypoints.min']
+        'waypoints': ['//cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min', BOWER_DIR + 'waypoints/lib/jquery.waypoints.min'],
+
+        // js-lib
+        'js-lib': [BOWER_DIR + 'lx-js-lib/src/dist/index.min']
     },
     map: {
         '*': {
@@ -58,6 +62,12 @@ let requireConfig = {
             exports: 'angular-ui-bootstrap'
         },
         
+        // directives
+        'ripple-icon': {
+            deps: [
+                'css!directives/ripple-icon/ripple-icon.css'
+            ]
+        },
 
         // bootstrap
         'bootstrap': {
@@ -127,6 +137,8 @@ require.onError = function (err) {
     console.log('require error:', err, arguments);
 };
 
-requirejs(['app', 'animation', 'left-sidebar'], function () {
+// directives
+let directives = ['left-sidebar', 'ripple-icon'];
+requirejs(['app', 'animation'].concat(directives), function () {
     angular.bootstrap(document, ['app']);
 });

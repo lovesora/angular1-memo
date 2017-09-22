@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "angular-bootstrap": "^2.5.0",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "lx-js-lib": "^0.0.11"
   }
 }

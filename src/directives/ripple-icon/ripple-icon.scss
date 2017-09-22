@@ -1,0 +1,59 @@
+// common
+$border: 1px;
+$primary-margin: 15px;
+$fast-animation-duration: .225s;
+$primary-color: #FFF;
+$accent-color: #DDD;
+// circle
+$width: 42px;
+// line
+$line-offset-width: 10px;
+$line-height: 2px;
+
+%line {
+    height: $line-height;
+    width: $width - $line-offset-width;
+    background-color: $accent-color;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -($width - $line-offset-width)/2;
+    margin-top: -$line-height/2;
+    
+    transition: background-color $fast-animation-duration;
+}
+
+.icon {
+    &-ripple {
+        &__container {
+            display: inline-block;
+            margin: $primary-margin;
+        }
+        &__circle {
+            position: relative;
+            width: $width;
+            height: $width;
+            border: $border solid $accent-color;
+            border-radius: 50%;
+            background-color: $accent-color;
+            background-clip: content-box;
+            padding: calc(#{$width} / 2 - #{$border});
+
+            transition: padding $fast-animation-duration;
+
+            &--active {
+                padding: 0;
+            }
+        }
+        &__line {
+            @extend %line;
+            &--active {
+                background-color: $primary-color;
+            }
+
+            &--vertical {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

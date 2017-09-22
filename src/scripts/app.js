@@ -94,8 +94,9 @@ define(['popper'], function (Popper) {
             .state('css3-icon', {
                 url: '/css3/icon',
                 templateUrl: 'views/css3/icon/icon.html',
+                controller: 'Css3IconController',
                 resolve: {
-                    deps: $requireProvider.requireJS(['css!views/css3/icon/icon.css'])
+                    deps: $requireProvider.requireJS(['views/css3/icon/icon.controller', 'css!views/css3/icon/icon.css'])
                 }
             })
                 

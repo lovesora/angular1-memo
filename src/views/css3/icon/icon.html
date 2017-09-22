@@ -6,20 +6,11 @@
         <div class="wedget__box">
             <div class="wedget__box-title">
                 <h1>Basis</h1>
-            </div>
+            </div
             <div class="wedget__box-content">
-                <div class="icon-ripple__container">
-                    <div class="icon-ripple__circle">
-                        <p class="icon-ripple__line"></p>
-                        <p class="icon-ripple__line--vertical"></p>
-                    </div>
-                </div>
-                <div class="icon-ripple__container">
-                    <div class="icon-ripple__circle"></div>
-                </div>
-                <div class="icon-ripple__container">
-                    <div class="icon-ripple__circle"></div>
-                </div>
+                <ripple-icon trigger="trigger" primary-color="#eee" accent-color="#000"></ripple-icon>
+                <button ng-click="onClickMouseEnter()" class="btn btn-primary">mouse enter</button>
+                <button ng-click="onClickMouseLeave()" class="btn btn-primary">mouse leave</button>
             </div>
         </div>
     </div>
