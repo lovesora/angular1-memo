@@ -79,10 +79,16 @@ define(['app', 'js-lib'], function (app, lib) {
                 $scope.id = guid();
                 
                 updateCssRules($attrs.primaryColor, $attrs.accentColor);
+                $scope.onMouseEnter = () => {
+                    enter($scope.id);
+                };
+                $scope.onMouseLeave = () => {
+                    leave($scope.id);
+                };
             },
             restrict: 'E',
             template: `
-                <div class="icon-ripple__circle" id="{{id}}">
+                <div class="icon-ripple__circle" id="{{id}}" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()">
                     <p class="icon-ripple__line"></p>
                     <p class="icon-ripple__line icon-ripple__line--vertical"></p>
                 </div>

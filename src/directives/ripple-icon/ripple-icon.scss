@@ -5,9 +5,9 @@ $fast-animation-duration: .225s;
 $primary-color: #FFF;
 $accent-color: #DDD;
 // circle
-$width: 42px;
+$width: 4vw;
 // line
-$line-offset-width: 10px;
+$line-offset-width: .6vw;
 $line-height: 2px;
 
 %line {
@@ -30,6 +30,7 @@ $line-height: 2px;
             margin: $primary-margin;
         }
         &__circle {
+            display: inline-block;
             position: relative;
             width: $width;
             height: $width;
