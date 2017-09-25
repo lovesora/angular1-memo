@@ -1,0 +1,25 @@
+<div class="wedget__box">
+    <div class="wedget__box-title">
+        <h1>ui-select</h1>
+    </div>
+    <div class="wedget__box-content">
+        <div class="wedget__box">
+            <div class="wedget__box-title">
+                <h1>Basis</h1>
+            </div>
+            <div class="wedget__box-content">
+                <ui-select ng-model="selected.value" on-remove="onRemoveItem($item, $model)" on-select="onSelectItem($item, $model)" >
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+                        <span ng-bind="item.name"></span>
+                    </ui-select-choices>
+                </ui-select>
+                <div class="wedget__quote">
+                    <a href="https://github.com/angular-ui/ui-select/wiki/ui-select">Official website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

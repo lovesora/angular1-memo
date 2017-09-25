@@ -1,111 +1,33 @@
-define(['popper'], function (Popper) {
-    window.Popper = Popper;
-    require(['bootstrap']);
+//---------bootstrap v4 require solution
+// define(['popper'], function (Popper) {
+//     window.Popper = Popper;
+//     require(['bootstrap']);
+//     return angular.module('app');
+// });
 
+define(['routes'], function (routes) {
     // 模块依赖
-    let app = angular.module('app', ['ngRequire', 'ui.router', 'ui.bootstrap']);
+    let angularUi = ['ui.router', 'ui.bootstrap', 'ui.select'];
+    let app = angular.module('app', ['ngRequire'].concat(angularUi));
 
-    app.config(['$urlRouterProvider', '$stateProvider', '$requireProvider', function ($urlRouterProvider, $stateProvider, $requireProvider) {
+    app.config(function ($urlRouterProvider, $stateProvider, $requireProvider, uiSelectConfig) {
         // 使用when来对一些不合法的路由进行重定向
         $urlRouterProvider.otherwise('/');
 
-        $stateProvider
-            // home
-            .state('home', {
-                url: '/',
-                templateUrl: 'views/home/home.html',
-                controller: 'HomeController',
+        let r = routes();
+        for (let k in r) {
+            $stateProvider.state(k, {
+                url: r[k].u,
+                templateUrl: r[k].t,
+                controller: r[k].c,
                 resolve: {
-                    deps: $requireProvider.requireJS(['views/home/home.controller', 'css!views/home/home.css'])
+                    deps: $requireProvider.requireJS(r[k].d)
                 }
-            })
+            }); 
+        }
 
-            // button
-            .state('button', {
-                url: '/button',
-                templateUrl: 'views/button/button.html'
-            })
-            .state('buttonGroup', {
-                url: '/button/group',
-                templateUrl: 'views/button/button-group.html'
-            })
-
-            // dropdown
-            .state('dropdown', {
-                url: '/dropdown',
-                templateUrl: 'views/dropdown/dropdown.html'
-            })
-
-            // select
-            .state('select', {
-                url: '/select',
-                templateUrl: 'views/select/select.html',
-                controller: 'SelectController',
-                resolve: {
-                    deps: $requireProvider.requireJS(['views/select/select.controller'])
-                }
-            })
-
-            // modal
-            .state('modal', {
-                url: '/modal',
-                templateUrl: 'views/modal/modal.html',
-                controller: 'ModalController',
-                resolve: {
-                    deps: $requireProvider.requireJS(['views/modal/modal.controller'])
-                }
-            })
-
-            // collapse
-            .state('collapse', {
-                url: '/collapse',
-                templateUrl: 'views/collapse/collapse.html',
-                contorller: 'CollapseController'
-            })
-
-            // carousel
-            .state('carousel', {
-                url: '/carousel',
-                templateUrl: 'views/carousel/carousel.html'
-            })
-                // swiper
-            .state('carousel-swiper', {
-                url: '/carousel/swiper',
-                templateUrl: 'views/carousel/swiper/swiper.html',
-                controller: 'CarouselSwiperController',
-                resolve: {
-                    deps: $requireProvider.requireJS(['views/carousel/swiper/swiper.controller', 'css!views/carousel/swiper/swiper.css'])
-                }
-            })
-
-
-
-            // jquery plugins
-            .state('jquery-waypoints', {
-                url: '/jquery/plugins/waypoints',
-                templateUrl: 'views/jquery/plugins/waypoints/waypoints.html',
-                controller: 'JqueryWaypointsController',
-                resolve: {
-                    deps: $requireProvider.requireJS(['views/jquery/plugins/waypoints/waypoints.controller', 'css!views/jquery/plugins/waypoints/waypoints.css'])
-                }
-            })
-
-            // css3 animation
-            .state('css3-icon', {
-                url: '/css3/icon',
-                templateUrl: 'views/css3/icon/icon.html',
-                controller: 'Css3IconController',
-                resolve: {
-                    deps: $requireProvider.requireJS(['views/css3/icon/icon.controller', 'css!views/css3/icon/icon.css'])
-                }
-            })
-                
-            // error
-            .state('404', {
-                url: '/404',
-                templateUrl: 'views/error/404.html'
-            });
-    }]);
+        uiSelectConfig.theme = 'bootstrap';
+    });
 
     return app;
 });

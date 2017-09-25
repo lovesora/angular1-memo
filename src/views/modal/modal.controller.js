@@ -1,5 +1,5 @@
 // angular-ui-bootstrap依赖的是bootstrap3，bootstrap4不支持
-define(['app', 'bootstrap3'], function (app) {
+define(['app'], function (app) {
     app.controller('ModalController', function ($scope, $uibModal) {
         let data = 'created by ModalController';
         

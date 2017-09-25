@@ -2,11 +2,8 @@
 
 
 left-sidebar {
-    // $bgColor: #444;
     $bgColor: lighten($primary-color, 2%);
-    // $bgHoverColor: #666;
     $bgHoverColor: $primary-color-dark;
-    // $borderLeftColor: #0ff;
     $borderLeftColor: $accent-color;
 
     transition: width $primary-animation-duration;
@@ -28,8 +25,9 @@ left-sidebar {
                 border-left: 2px transparent solid;
                 color: $primary-color-text;
                 display: block;
-                transition: border-left $primary-animation-duration, background-color $primary-animation-duration;
                 padding: 6px;
+
+                transition: border-left $primary-animation-duration, background-color $primary-animation-duration;
             }
             a:hover {
                 background-color: $bgHoverColor;
@@ -55,24 +53,32 @@ left-sidebar {
     }
 
     .left-sidebar__arrow {
+        transition: border-radius $primary-animation-duration;
+        
+        background-color: darken($primary-color, 2%);
+
         position: absolute;
         top: 0;
         right: 0;
+        width: 10px;
         height: 100%;
+        
         display: flex;
         vertical-align: middle;
-        color: #fff;
         align-items: center;
+
         cursor: w-resize;
-        width: 10px;
+        
         padding-left: 2px;
         padding-right: 2px;
-        background-color: darken($primary-color, 2%);
+        
         border-radius: 10px 0 0 10px;
-        transition: border-radius $primary-animation-duration;
 
         > div {
-            transition:transform $primary-animation-duration
+            transition:transform $primary-animation-duration;
+            > i {
+                color: $primary-color-text;
+            }
         }
     }
 }

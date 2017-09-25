@@ -12,7 +12,11 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
             href: '/dropdown'
         }, {
             title: 'Select',
-            href: '/select'
+            href: '/select',
+            children: [{
+                title: 'ui-select',
+                href: '/select/ui-select'
+            }]
         }, {
             title: 'Collapse',
             href: '/collapse'

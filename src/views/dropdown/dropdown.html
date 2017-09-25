@@ -5,100 +5,28 @@
     <div class="wedget__box-content">
         <div class="wedget__box">
             <div class="wedget__box-title">
-                <h1>Basis</h1>
+                <h1>Basis & Dropdown header</h1>
             </div>
             <div class="wedget__box-content">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Dropdown
+                        <span class="caret"></span>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="">Action</a>
-                        <a class="dropdown-item" href="">Another action</a>
-                        <a class="dropdown-item" href="">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="">Separated link</a>
-                    </div>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Dropdown header</li>
+                        <li><a href="">Action</a></li>
+                        <li><a href="">Another action</a></li>
+                        <li><a href="">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Separated link</a></li>
+                    </ul>
                 </div>
                 <div class="wedget__quote">
-                    wrapper add class <span class="alert alert-info" role="alert">.dropdown</span>
-                    <br><br> button add class <span class="alert alert-info" role="alert">.dropdown-toggle</span>
-                    <br><br> button add attr <span class="alert alert-info" role="alert">data-toggle="dropdown"</span>
-                    <br><br> content wrapper add class <span class="alert alert-info" role="alert">.dropdown-menu</span>
-                    <br><br> list add class <span class="alert alert-info" role="alert">.dropdown-item</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="wedget__box">
-            <div class="wedget__box-title">
-                <h1>Dropdown Split</h1>
-            </div>
-            <div class="wedget__box-content">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger">Action</button>
-                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="">Action</a>
-                        <a class="dropdown-item" href="">Another action</a>
-                        <a class="dropdown-item" href="">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="">Separated link</a>
-                    </div>
-                </div>
-                <div class="wedget__quote">
-                    change wrapper <span class="alert alert-info" role="alert">.btn-group</span>
-                    <br><br> icon add class <span class="alert alert-info" role="alert">.dropdown-toggle-split</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="wedget__box">
-            <div class="wedget__box-title">
-                <h1>Sizing</h1>
-            </div>
-            <div class="wedget__box-content">
-                <div class="btn-group">
-                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Large button
-                    </button>
-                    <div class="dropdown-menu">
-                        ...
-                    </div>
-                </div>
-
-                <hr>
-
-                <!-- Small button groups (default and split) -->
-                <div class="btn-group">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Small button
-                    </button>
-                    <div class="dropdown-menu">
-                        ...
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="wedget__box">
-            <div class="wedget__box-title">
-                <h1>Dropup</h1>
-            </div>
-            <div class="wedget__box-content">
-                <div class="btn-group dropup">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropup
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="">Action</a>
-                    </div>
-                </div>
-
-                <div class="wedget__quote">
-                    change <span class="alert alert-info" role="alert">.dropdown</span> to <span class="alert alert-info" role="alert">.dropup</span>
+                    wrapper add class <span class="alert alert-info">.dropdown</span>
+                    <hr> button add class <span class="alert alert-info">.dropdown-toggle</span>
+                    <hr> button add attr <span class="alert alert-info">data-toggle="dropdown"</span>
+                    <hr> content wrapper add class <span class="alert alert-info">.dropdown-menu</span>
                 </div>
             </div>
         </div>
@@ -108,66 +36,126 @@
                 <h1>Alignment</h1>
             </div>
             <div class="wedget__box-content">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        This dropdown's menu is right-aligned
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item" type="button">Action</button>
-                        <button class="dropdown-item" type="button">Another action</button>
-                        <button class="dropdown-item" type="button">Something else here</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="wedget__box">
-            <div class="wedget__box-title">
-                <h1>Menu headers</h1>
-            </div>
-            <div class="wedget__box-content">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown Header</button>
-                    <div class="dropdown-menu">
-                        <h6 class="dropdown-header">Dropdown header</h6>
-                        <a class="dropdown-item" href="">Action</a>
-                        <a class="dropdown-item" href="">Another action</a>
-                    </div>
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Alignment
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="">Action</a></li>
+                        <li><a href="">Another action</a></li>
+                        <li><a href="">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown" style="display: inline-block; margin-top: 15px; margin-left: 100px;">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Alignment
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="">Action</a></li>
+                        <li><a href="">Another action</a></li>
+                        <li><a href="">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="wedget__quote">
+                    add class <span class="alert alert-info">.dropdown-menu-right</span>
+                    <hr> notice that the origin of dropdown based on the parent <span class="alert alert-info">.dropdown</span>
                 </div>
             </div>
         </div>
 
         <div class="wedget__box">
             <div class="wedget__box-title">
-                <h1>Dropdown Form</h1>
+                <h1>Dropup</h1>
             </div>
             <div class="wedget__box-content">
                 <div class="dropup">
-                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown Form</button>
-                    <div class="dropdown-menu">
-                        <form class="px-4 py-3">
-                            <div class="form-group">
-                                <label for="exampleDropdownFormEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleDropdownFormPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input">
-                                    Remember me
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a href="" class="dropdown-item">Item</a>
-                    </div>
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Dropup
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Dropdown header</li>
+                        <li><a href="">Action</a></li>
+                        <li><a href="">Another action</a></li>
+                        <li><a href="">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="wedget__quote">
+                    change <span class="alert alert-info">.dropdown</span> to <span class="alert alert-info">.dropup</span>
                 </div>
             </div>
         </div>
+
+        <div class="wedget__box">
+            <div class="wedget__box-title">
+                <h1>Sizing</h1>
+            </div>
+            <div class="wedget__box-content">
+                <p>
+                    <div class="dropdown">
+                        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Dropdown header</li>
+                            <li><a href="">Action</a></li>
+                            <li><a href="">Another action</a></li>
+                            <li><a href="">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Separated link</a></li>
+                        </ul>
+                    </div>
+                </p>
+                <p>
+                    <div class="dropdown">
+                        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Dropdown header</li>
+                            <li><a href="">Action</a></li>
+                            <li><a href="">Another action</a></li>
+                            <li><a href="">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Separated link</a></li>
+                        </ul>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+        <div class="wedget__box">
+            <div class="wedget__box-title">
+                <h1>Disabled</h1>
+            </div>
+            <div class="wedget__box-content">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Dropdown
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Dropdown header</li>
+                        <li><a href="">Action</a></li>
+                        <li class="disabled"><a href="">Another action</a></li>
+                        <li><a href="">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </div>
