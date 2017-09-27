@@ -405,7 +405,15 @@ gulp.task('bs', () => {
     browserSync.init(configs.bs);
 });
 
-gulp.task('init', () => {
+gulp.task('compileSass', () => {
+    new Task()
+        .gulpSass({
+            srcPath: configs.scss,
+            distDir: configs.srcDir
+        });
+});
+
+gulp.task('init', ['compileSass'], () => {
     new Task()
         .html({
             srcPath: configs.html,
@@ -414,10 +422,6 @@ gulp.task('init', () => {
         .angularjs({
             srcPath: configs.angularjs,
             distDir: configs.distDir
-        })
-        .gulpSass({
-            srcPath: configs.scss,
-            distDir: configs.srcDir
         })
         .css({
             srcPath: configs.css,
