@@ -5,10 +5,10 @@ $fast-animation-duration: .225s;
 $primary-color: #FFF;
 $accent-color: #DDD;
 // circle
-$width: 4vw;
+$width: 2.4vw;
 // line
 $line-offset-width: .6vw;
-$line-height: 2px;
+$line-height: 1px;
 
 %line {
     height: $line-height;
@@ -44,6 +44,7 @@ $line-height: 2px;
 
             &--active {
                 padding: 0;
+                border: 0;
             }
         }
         &__line {

@@ -295,6 +295,30 @@ class Task {
         return this;
     }
 
+    gulpSass(p) {
+        if (configs.isSourcemaps)
+            combiner.obj([
+                gulp.src(p.srcPath),
+                $.sourcemaps.init(),
+                $.sass(),
+                $.sourcemaps.write('./'),
+                gulp.dest(p.distDir),
+                $.callback(() => {
+                    this.reload(p);
+                })
+            ]);
+        else
+            combiner.obj([
+                gulp.src(p.srcPath),
+                $.sass(),
+                gulp.dest(p.distDir),
+                $.callback(() => {
+                    this.reload(p);
+                })
+            ]);
+        return this;
+    }
+
     /**
      * 添加浏览器前缀&压缩css
      * @param {srcPath,distDir} p css文件的路径信息
@@ -352,7 +376,7 @@ gulp.task('watch', () => {
     $.watch(configs.scss, event => {
         new Log(event, false).cb(path => {
             new Task()
-                .rubySass(path);
+                .gulpSass(path);
         });
     });
 
@@ -391,7 +415,7 @@ gulp.task('init', () => {
             srcPath: configs.angularjs,
             distDir: configs.distDir
         })
-        .rubySass({
+        .gulpSass({
             srcPath: configs.scss,
             distDir: configs.srcDir
         })

@@ -13,24 +13,24 @@ let requireConfig = {
         'ripple-icon': ['directives/ripple-icon/ripple-icon.directive'],
 
         // angular
-        'angular': ['//cdn.bootcss.com/angular.js/1.4.6/angular.min', BOWER_DIR + 'angular/angular.min'],
+        'angular': [BOWER_DIR + 'angular/angular.min', '//cdn.bootcss.com/angular.js/1.4.6/angular.min'],
         'angular-require': [BOWER_DIR + 'angular-require/angular-require.min'],
-        'angular-ui-router': ['//cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min', BOWER_DIR + 'angular-ui-router/release/angular-ui-router.min'],
-        'angular-ui-bootstrap': ['//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min', BOWER_DIR + 'angular-bootstrap/ui-bootstrap-tpls.min'],
-        'angular-ui-select': ['//cdn.bootcss.com/angular-ui-select/0.19.8/select.min', BOWER_DIR + 'angular-ui-select/dist/select.min'],
+        'angular-ui-router': [BOWER_DIR + 'angular-ui-router/release/angular-ui-router.min', '//cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.min'],
+        'angular-ui-bootstrap': [BOWER_DIR + 'angular-bootstrap/ui-bootstrap-tpls.min', '//cdn.bootcss.com/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min'],
+        'angular-ui-select': [BOWER_DIR + 'angular-ui-select/dist/select.min', '//cdn.bootcss.com/angular-ui-select/0.19.8/select.min'],
 
         // bootstrap
-        'jquery': ['//cdn.bootcss.com/jquery/3.2.1/jquery.slim.min'],
-        'bootstrap3': ['//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min'],
+        'jquery': [BOWER_DIR + 'jquery/dist/jquery.slim.min', '//cdn.bootcss.com/jquery/3.2.1/jquery.slim.min'],
+        'bootstrap3': [BOWER_DIR + 'bootstrap/dist/js/bootstrap.min', '//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min'],
         // 'popper': ['//cdn.bootcss.com/popper.js/1.12.5/umd/popper.min'],
         // 'bootstrap': ['//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min'],
 
         // animation
         'animation': ['scripts/jquery/animation'],
-        'swiper': ['//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min'],
+        'swiper': [BOWER_DIR + 'swiper/dist/js/swiper.jquery.umd.min', '//cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.umd.min'],
 
         // jquery-plugin
-        'waypoints': ['//cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min', BOWER_DIR + 'waypoints/lib/jquery.waypoints.min'],
+        'waypoints': [BOWER_DIR + 'waypoints/lib/jquery.waypoints.min', '//cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min'],
 
         // js-lib
         'js-lib': [BOWER_DIR + 'lx-js-lib/src/dist/index.min']
@@ -87,21 +87,21 @@ let requireConfig = {
         'bootstrap3': {
             deps: [
                 'jquery',
-                'css!//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
-                'css!//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css'
+                `css!${BOWER_DIR}font-awesome/css/font-awesome.min.css`,
+                `css!${BOWER_DIR}bootstrap/dist/css/bootstrap.min.css`
             ]
         },
 
         // animation
         'animation': {
             deps: [
-                'css!//cdn.bootcss.com/animate.css/3.5.2/animate.min.css'
+                `css!${BOWER_DIR}animate.css/animate.min.css`
             ]
         },
         'swiper': {
             deps: [
                 'jquery',
-                'css!//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css'
+                `css!${BOWER_DIR}swiper/dist/css/swiper.min.css`
             ],
             exports: 'swiper'
         },

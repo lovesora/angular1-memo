@@ -48,6 +48,13 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
                 title: 'Icon',
                 href: '/css3/icon'
             }]
+        }, {
+            title: 'Table',
+            href: '/table',
+            children: [{
+                title: 'Ng-Table',
+                href: '/table/ng-table'
+            }]
         }];
         
         let style = {

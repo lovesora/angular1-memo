@@ -71,6 +71,17 @@ define(function () {
             c: 'Css3IconController',
             d: ['views/css3/icon/icon.controller', 'css!views/css3/icon/icon.css'],
         }, 
+        // table
+        'table': {
+            u: '/table',
+            t: 'views/table/table.html'
+        },
+        'ng-table': {
+            u: '/table/ng-table',
+            t: 'views/table/ng-table.html',
+            c: 'NgTableController',
+            d: ['views/table/ng-table.controller', 'css!views/table/ng-table.css']
+        },
         '404': {
             u: '/404',
             t: 'views/error/404.html',
