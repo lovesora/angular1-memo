@@ -8,7 +8,7 @@
 define(['routes'], function (routes) {
     // 模块依赖
     let angularUi = ['ui.router', 'ui.bootstrap', 'ui.select'];
-    let app = angular.module('app', ['ngRequire'].concat(angularUi));
+    let app = angular.module('app', ['ngRequire', 'ngTable'].concat(angularUi));
 
     app.config(function ($urlRouterProvider, $stateProvider, $requireProvider, uiSelectConfig) {
         // 使用when来对一些不合法的路由进行重定向

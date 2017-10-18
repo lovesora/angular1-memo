@@ -1,4 +1,4 @@
-define(['app', 'js-lib'], function (app, lib) {
+define(['app', 'js-lib', 'css!directives/ripple-icon/ripple-icon.css'], function (app, lib) {
     app.directive('rippleIcon', function () {
         let updateCssRules = (primaryColor, accentColor) => {
             let cssRules = null;
@@ -88,10 +88,10 @@ define(['app', 'js-lib'], function (app, lib) {
             },
             restrict: 'E',
             template: `
-                <div class="icon-ripple__circle" id="{{id}}" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()">
-                    <p class="icon-ripple__line"></p>
-                    <p class="icon-ripple__line icon-ripple__line--vertical"></p>
-                </div>
+<div class="icon-ripple__circle" id="{{id}}" ng-mouseenter="onMouseEnter()" ng-mouseleave="onMouseLeave()">
+    <p class="icon-ripple__line"></p>
+    <p class="icon-ripple__line icon-ripple__line--vertical"></p>
+</div>
             `
         };
     });

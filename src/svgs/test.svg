@@ -1,0 +1,72 @@
+
+<svg viewBox="0 0 375 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="41.9192642%" y1="96.9965721%" x2="41.9192641%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#FF7D15" offset="0%"></stop>
+            <stop stop-color="#FFAA73" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="可实现版本1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A2点开-我的券包（预购券）" transform="translate(0.000000, -267.000000)">
+            <g id="可用服务券" transform="translate(0.000000, 267.000000)">
+                <g id="空券">
+                    <rect id="Rectangle-3" fill="url(#linearGradient-1)" x="9" y="1" width="357.359672" height="143" rx="8"></rect>
+                    <ellipse id="Oval-2" fill="#EFF2F7" cx="366.733763" cy="48.7072854" rx="7.98170083" ry="9.07004944"></ellipse>
+                    <ellipse id="Oval-2-Copy" fill="#EFF2F7" cx="8.76426149" cy="48.0143031" rx="7.98170083" ry="9.07004944"></ellipse>
+                    <g id="lines" transform="translate(22.126568, 48.600252)" stroke="#DE2D39" stroke-linecap="square">
+                        <path d="M0.609828793,0.692982287 L12.8064046,0.692982287" id="Line-3"></path>
+                        <path d="M21.3440077,0.692982287 L33.5405836,0.692982287" id="Line-3-Copy"></path>
+                        <path d="M42.0781867,0.692982287 L54.2747625,0.692982287" id="Line-3-Copy-2"></path>
+                        <path d="M62.8123656,0.692982287 L75.0089415,0.692982287" id="Line-3-Copy-3"></path>
+                        <path d="M83.5465446,0.692982287 L95.7431204,0.692982287" id="Line-3-Copy-4"></path>
+                        <path d="M104.280724,0.692982287 L116.477299,0.692982287" id="Line-3-Copy-5"></path>
+                        <path d="M125.014902,0.692982287 L137.211478,0.692982287" id="Line-3-Copy-6"></path>
+                        <path d="M145.749081,0.692982287 L157.945657,0.692982287" id="Line-3-Copy-7"></path>
+                        <path d="M166.48326,0.692982287 L178.679836,0.692982287" id="Line-3-Copy-8"></path>
+                        <path d="M187.217439,0.692982287 L199.414015,0.692982287" id="Line-3-Copy-9"></path>
+                        <path d="M207.951618,0.692982287 L220.148194,0.692982287" id="Line-3-Copy-10"></path>
+                        <path d="M228.685797,0.692982287 L240.882373,0.692982287" id="Line-3-Copy-11"></path>
+                        <path d="M249.419976,0.692982287 L261.616552,0.692982287" id="Line-3-Copy-12"></path>
+                        <path d="M270.154155,0.692982287 L282.350731,0.692982287" id="Line-3-Copy-13"></path>
+                        <path d="M290.888334,0.692982287 L303.08491,0.692982287" id="Line-3-Copy-14"></path>
+                        <path d="M311.622513,0.692982287 L323.819089,0.692982287" id="Line-3-Copy-15"></path>
+                    </g>
+                    <g id="券头-copy" transform="translate(8.000000, 0.430186)">
+                        <path d="M40.4641977,0.559250508 L1,38.6449125 L1,10.5592505 L1,10.5592505 C1,5.03640301 5.4771525,0.559250508 11,0.559250508 L11,0.559250508 L40.4641977,0.559250508 Z" id="Combined-Shape" fill="#283042"></path>
+                        <text id="服务" transform="translate(13.105671, 12.212015) rotate(-39.000000) translate(-13.105671, -12.212015) " font-family=".PingFangSC-Regular, .PingFang SC" font-size="10" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="2.88567122" y="17.2120148">服务</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="券具体内容" transform="translate(61.000000, 15.000000)">
+                    <text id="剩余：1" font-family=".PingFang-SC-Medium, PingFang SC" font-size="14" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="134" y="84">剩余：1</tspan>
+                    </text>
+                    <text id="剩余：次数不限" font-family=".PingFang-SC-Medium, PingFang SC" font-size="14" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="134" y="59">剩余：次数不限</tspan>
+                    </text>
+                    <text id="皮毛调理" font-family=".PingFang-SC-Medium, PingFang SC" font-size="14" font-weight="bold" fill="#F5F5F5">
+                        <tspan x="0" y="59">皮毛调理</tspan>
+                    </text>
+                    <text id="普通SPA" font-family=".PingFang-SC-Medium, PingFang SC" font-size="14" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="0" y="84">普通SPA</tspan>
+                    </text>
+                    <text id="4次皮毛套餐" font-family=".PingFang-SC-Medium, PingFang SC" font-size="17" font-weight="bold" fill="#401D00">
+                        <tspan x="7.57647462" y="18.929554">4次皮毛套餐</tspan>
+                    </text>
+                    <text id="有效期：2017.01.01-~-201" font-family=".PingFangSC-Regular, .PingFang SC" font-size="13" font-weight="normal" fill="#FFCECE">
+                        <tspan x="0" y="109">有效期：2017.01.01 ~ 2017.11.11</tspan>
+                    </text>
+                    <g id="预约" transform="translate(234.000000, 96.000000)">
+                        <text font-family=".PingFang-SC-Medium, PingFang SC" font-size="14" font-weight="bold" fill="#401D00">
+                            <tspan x="11.1780796" y="15.929554">预约 </tspan>
+                        </text>
+                        <polyline id="Path-2" stroke="#401D00" stroke-linecap="round" points="44 6 50 11.5 44 17"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

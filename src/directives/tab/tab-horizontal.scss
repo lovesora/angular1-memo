@@ -1,0 +1,32 @@
+.tab-horizontal {
+    $active-color: #DD6E23;
+    $border-bottom-width: 3px;
+    $transition-duration: .382s;
+    
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 1%;
+        flex-grow: 1;
+        text-align: center;
+        color: #000;
+        height: 48px;
+        cursor: pointer;
+
+        border-bottom: $border-bottom-width solid transparent;
+        transition: border-bottom $transition-duration, color $transition-duration;
+
+        &--active {
+            color: $active-color;
+            border-bottom: $border-bottom-width solid $active-color;
+        }
+    }
+    
+}

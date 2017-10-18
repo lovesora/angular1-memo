@@ -34,6 +34,7 @@
     "require-css": "0.1.10",
     "requirejs": "2.3.5",
     "swiper": "3.4.2",
-    "waypoints": "^4.0.1"
+    "waypoints": "^4.0.1",
+    "ng-table": "1.0.0-beta.9"
   }
 }

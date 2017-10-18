@@ -1,0 +1,110 @@
+.b {
+    &c{display: block;margin-left: auto;margin-right: auto;}
+}
+
+.c {
+    &b{clear: both;}
+    &l{clear: left;}
+    &r{clear: right;}
+}
+
+.d {
+    &b{display: block;}
+    &ib{display: inline-block}
+    &n{display: none;}
+}
+
+.f {
+    &l{float: left;}
+    &r{float: right;}
+
+    &s {
+        &12{font-size: 12px;}
+        &13{font-size: 13px;}
+        &14{font-size: 14px;}
+        &16{font-size: 16px;}
+        &20{font-size: 20px;}
+    }
+
+    &w {
+        b{font-weight: bold;}
+        n{font-weight: normal;}
+    }
+}
+
+
+.lh {
+    &150{line-height: 150%}
+    &180{line-height: 180%}
+    &200{line-height: 200%}
+}
+
+.p {
+    &s{position: static;}
+    &r{position: relative;}
+    &a{position: absolute;}
+    &f{position: fixed;}
+}
+
+.t {
+    &a {
+        &l{text-align: left;}
+        &c{text-align: center;}
+        &r{text-align: right;}
+    }
+
+    &d {
+        &u{text-decoration: underline;}
+        &n{text-decoration: none;}
+    }
+    
+    &i {
+        &2{text-indent: 2em}
+    }
+}
+
+
+.va {
+    &m{vertical-align: middle;}
+}
+
+.ws {
+    &n{white-space: nowrap;}
+}
+
+@mixin size ($abbr, $attr) {
+    .#{$abbr} {
+        $i: 0;
+        @while $i <= 100 {
+            &#{$i} {
+                #{$attr}: $i + px;
+            }
+            $i: $i + 10;
+        }
+    }
+}
+@include size(w, width);
+@include size(h, height);
+ 
+
+@mixin box ($abbr, $attr) {
+    .#{$abbr} {
+        $i: 0;
+        @while $i <= 100 {
+            &#{$i} {
+                #{$attr}: $i + px;
+            }
+            $i: $i + 5;
+        }
+    }
+}
+@include box(m, margin);
+@include box(mt, margin-top);
+@include box(mr, margin-right);
+@include box(mb, margin-bottom);
+@include box(ml, margin-left);
+@include box(p, padding);
+@include box(pt, padding-top);
+@include box(pr, padding-right);
+@include box(pb, padding-bottom);
+@include box(pl, padding-left);

@@ -68,6 +68,14 @@ class Configs {
          */
         this.css = [`${this.srcDir}/**/*.css`];
 
+        
+        /**
+         * svg所在源文件夹
+         * @type {String}
+         */
+        this.svg = [`${this.srcDir}/**/*.svg`];
+
+
         /**
          * vendor目录
          */
@@ -246,7 +254,7 @@ class Task {
                 gulp.src(p.srcPath),
                 $.sourcemaps.init(),
                 $.babel({
-                    'presets': ['es2015']
+                    'presets': ['env']
                 }),
                 $.ngAnnotate(),
                 $.uglify(),
@@ -260,7 +268,7 @@ class Task {
             combiner.obj([
                 gulp.src(p.srcPath),
                 $.babel({
-                    'presets': ['es2015']
+                    'presets': ['env']
                 }),
                 $.ngAnnotate(),
                 $.uglify(),
@@ -353,6 +361,19 @@ class Task {
             ]).on('error', this.combinerErrHandler.common);
         return this;
     }
+
+    /**
+     * svg
+     */
+    svg(p) {
+        combiner.obj([
+            gulp.src(p.srcPath),
+            gulp.dest(p.distDir),
+            $.callback(() => {
+                this.reload(p);
+            })
+        ]).on('error', this.combinerErrHandler.common);
+    }
 }
 
 gulp.task('watch', () => {
@@ -387,6 +408,13 @@ gulp.task('watch', () => {
                     srcPath: configs.css,
                     distDir: configs.distDir
                 });
+        });
+    });
+
+    $.watch(configs.svg, event => {
+        new Log(event).cb(path => {
+            new Task()
+                .svg(path);
         });
     });
 });
@@ -425,6 +453,10 @@ gulp.task('init', ['compileSass'], () => {
         })
         .css({
             srcPath: configs.css,
+            distDir: configs.distDir
+        })
+        .svg({
+            srcPath: configs.svg,
             distDir: configs.distDir
         });
 });

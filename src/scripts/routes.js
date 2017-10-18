@@ -82,6 +82,21 @@ define(function () {
             c: 'NgTableController',
             d: ['views/table/ng-table.controller', 'css!views/table/ng-table.css']
         },
+        // tab
+        'tab-horizontal': {
+            u: '/tab/horizontal',
+            t: 'views/tab/tab-horizontal.html',
+            c: 'TabHorizontalController',
+            d: ['views/tab/tab-horizontal.controller', 'css!views/tab/tab-horizontal.css']
+        },
+        // svg ^2017-10-12 19:15:22
+        'svg': {
+            u: '/svg',
+            t: 'views/svg/svg.html',
+            c: 'SvgController',
+            d: ['views/svg/svg.controller', 'css!views/svg/svg.css']
+        },
+        // $2017-10-12 19:16:11
         '404': {
             u: '/404',
             t: 'views/error/404.html',

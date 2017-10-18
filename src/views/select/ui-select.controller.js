@@ -8,7 +8,7 @@ define(['app'], function (app) {
             {id: 5, name: 'fifth'},
         ];
     
-        $scope.selected = {
+        $scope.selected1 = {
             value: $scope.itemArray[0]
         };
 

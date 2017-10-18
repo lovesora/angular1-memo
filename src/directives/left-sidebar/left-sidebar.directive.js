@@ -55,6 +55,15 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
                 title: 'Ng-Table',
                 href: '/table/ng-table'
             }]
+        }, {
+            title: 'Tab',
+            children: [{
+                title: 'Horizontal',
+                href: '/tab/horizontal'
+            }]
+        }, {
+            title: 'SVG',
+            href: '/svg'
         }];
         
         let style = {
