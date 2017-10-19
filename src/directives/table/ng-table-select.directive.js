@@ -18,7 +18,6 @@ new function () {
 
                 },
                 controller: function ($scope, NgTableParams, ngTableFilterFn) {
-                    console.log($scope);
                     // ------------------ conf ------------------ 
                     
                     // 初始化ng-table的数据

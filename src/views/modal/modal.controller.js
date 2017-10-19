@@ -69,6 +69,9 @@ define(['app', 'fn.modal.select'], function (app) {
                             name: 'loverem',
                             opt: 'opt2'
                         }]
+                    },
+                    modal: {
+                        title: 'test'
                     }
                 });
             } catch (e) {

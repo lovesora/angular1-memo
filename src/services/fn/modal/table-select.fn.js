@@ -28,8 +28,6 @@ new function () {
         app.controller('modalTableSelectController', function ($scope, $uibModalInstance) {
             $scope.state = $scope.$resolve.state;
 
-            console.log($scope);
-
             $scope.onClickOk = () => {
                 
                 let result = $scope.state.table.data.filter(v => v.isActive);

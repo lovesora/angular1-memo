@@ -165,6 +165,10 @@ let requireConfig = {
                 // babel
                 'scripts/vendor/polyfill.min.js',
                 
+                // support
+                'css!styles/support.css',
+                // compatibility
+                'css!styles/compatibility.css',
                 // standard
                 'css!styles/standard.css',
                 // layout
