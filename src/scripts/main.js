@@ -14,7 +14,7 @@ let requireConfig = {
         'left-sidebar': ['directives/left-sidebar/left-sidebar.directive'],
         'ripple-icon': ['directives/ripple-icon/ripple-icon.directive'],
         'tab-horizontal': ['directives/tab/tab-horizontal.directive'],
-
+        'ng-table-select': ['directives/table/ng-table-select.directive'],
 
         // ------------------ angular ------------------
         // angular
@@ -49,6 +49,12 @@ let requireConfig = {
         // js-lib
         'js-lib': [BOWER_DIR + 'lx-js-lib/src/dist/index.min'],
 
+
+        // ------------------ fn ------------------
+        // common
+        'fn.common': 'services/fn/common.fn',
+        // ng-table
+        'fn.table.ngTable': 'services/fn/table/ng-table.fn',
 
         // ------------------ services ------------------
         // common

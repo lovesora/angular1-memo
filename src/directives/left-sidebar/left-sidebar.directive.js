@@ -54,6 +54,9 @@ define(['app', 'css!directives/left-sidebar/left-sidebar.css'], function (app) {
             children: [{
                 title: 'Ng-Table',
                 href: '/table/ng-table'
+            }, {
+                title: 'Ng-Table-Select',
+                href: '/table/ng-table-select'
             }]
         }, {
             title: 'Tab',

@@ -1,0 +1,16 @@
+.ng-table-select {
+    &__table {
+        margin-bottom: 30px;
+
+        td,
+        th {
+            text-align: center;
+        }
+
+        &-row {
+            &--active {
+                background-color: darken(#f5f5f5, 2%)!important;
+            }
+        }
+    }
+}

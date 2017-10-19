@@ -1,0 +1,67 @@
+<table ng-table-dynamic="tableParams with tableCols" class="table table-hover ng-table-select__table">
+    <caption>
+        <form class="form-inline">
+            <!-- 搜索 -->
+            <div class="input-group pull-left">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+                <input type="text" ng-change="onFilterChange()" ng-model="filter.value" class="form-control" placeholder="搜索规格">
+            </div>
+
+            <!-- 过滤：状态 -->
+            <div class="dropdown pull-left">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                    状态
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a ng-click="onClickFilterByStatus(STATUS.ENABLE)">
+                            <span class="glyphicon glyphicon-eye-open green"></span>启用</a>
+                    </li>
+                    <li>
+                        <a ng-click="onClickFilterByStatus(STATUS.DISABLE)">
+                            <span class="glyphicon glyphicon-eye-open red"></span>禁用</a>
+                    </li>
+                    <li>
+                        <a ng-click="onClickFilterByStatus(STATUS.ALL)">
+                            <span class="glyphicon glyphicon-eye-open default"></span>全部</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 过滤：列 -->
+            <div class="dropdown pull-right">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                    显示列
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li ng-repeat="col in tableCols track by $index">
+                        <a ng-click="col.show = !col.show" style="padding: 3px 8px;">
+                            {{ col.title }}
+                            <i class="pull-right glyphicon" ng-class="{'glyphicon-ok': col.show, 'glyphicon-remove': !col.show}">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </form>
+    </caption>
+
+
+    <!-- 与业务逻辑相关的需要显示的列 -->
+    <!-- <tr ng-repeat="row in $data|filter:filterValue"> -->
+    <tr ng-class="row.isActive && 'ng-table-select__table-row--active'" ng-click="onClickRow(row)" ng-repeat="row in $data">
+        <td ng-repeat="col in tableCols">
+            <div>{{ row[col.field] }}</div>
+        </td>
+    </tr>
+    <tr ng-if="$data.length == 0">
+        <td colspan="{{tableCols.length}}">暂无数据</td>
+    </tr>
+</table>

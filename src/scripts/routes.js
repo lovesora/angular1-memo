@@ -82,6 +82,12 @@ define(function () {
             c: 'NgTableController',
             d: ['views/table/ng-table.controller', 'css!views/table/ng-table.css']
         },
+        'ng-table-select': {
+            u: '/table/ng-table-select',
+            t: 'views/table/ng-table-select.html',
+            c: 'NgTableSelectController',
+            d: ['views/table/ng-table-select.controller', 'css!views/table/ng-table-select.css']
+        },
         // tab
         'tab-horizontal': {
             u: '/tab/horizontal',

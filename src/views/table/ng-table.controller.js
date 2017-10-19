@@ -31,49 +31,6 @@ define(['app', 'ng-table'], function (app) {
         }];
     });
 
-    app.controller('NgTableController', function ($scope, NgTableConfValue, NgTableDataService, NgTableFilterFn, NgTableParams) {
-        // ------------------ conf ------------------ 
-        $scope.tableCols = NgTableConfValue.cols;
-        $scope.tableParams =  new NgTableParams({
-            count: NgTableConfValue.count
-        }, {
-            dataset: [],
-            paginationMaxBlocks: 7,
-            paginationMinBlocks: 2,
-            filterOptions: {
-                filterDelay: 0,
-                filterFn: NgTableFilterFn
-            }
-        });
-        // 初始化ng-table的数据
-        let initNgTableData = () => {
-            let dataset = NgTableDataService.data();
-            $scope.tableParams.settings({
-                dataset
-            });
-        };
-        $scope.filter = {
-            value: '',
-            filters: () => [{
-                type: '|',
-                rule: {
-                    cols: NgTableConfValue.filterCols,
-                    filterValue: $scope.filter.value
-                }
-            }]
-        };
-
-        // ------------------ event ------------------
-        $scope.onFilterChange = () => {
-            $scope.tableParams.filter($scope.filter.filters());
-        };
-        
-        
-        // ------------------ init ------------------
-        initNgTableData();
-    });
-
-
     app.factory('NgTableFilterFn', function () {
         return function (data, filterRules) {
             let _data = data;
@@ -111,5 +68,47 @@ define(['app', 'ng-table'], function (app) {
             return _data;
         };
     });
-    
+
+    app.controller('NgTableController', function ($scope, NgTableConfValue, NgTableDataService, NgTableFilterFn, NgTableParams) {
+        // ------------------ conf ------------------ 
+        $scope.tableCols = NgTableConfValue.cols;
+        $scope.tableParams =  new NgTableParams({
+            count: NgTableConfValue.count
+        }, {
+            dataset: [],
+            paginationMaxBlocks: 7,
+            paginationMinBlocks: 2,
+            filterOptions: {
+                filterDelay: 0,
+                filterFn: NgTableFilterFn
+            }
+        });
+        // 初始化ng-table的数据
+        let initNgTableData = () => {
+            let dataset = NgTableDataService.data();
+            $scope.tableParams.settings({
+                dataset
+            });
+        };
+        $scope.filter = {
+            value: '',
+            filters: () => [{
+                type: '|',
+                rule: {
+                    cols: NgTableConfValue.filterCols,
+                    filterValue: $scope.filter.value
+                }
+            }]
+        };
+
+        // ------------------ event ------------------
+        $scope.onFilterChange = () => {
+            $scope.tableParams.filter($scope.filter.filters());
+        };
+        
+        // ------------------ init ------------------
+        initNgTableData();
+    });
+
+
 });
