@@ -55,6 +55,8 @@ let requireConfig = {
         'fn.common': 'services/fn/common.fn',
         // ng-table
         'fn.table.ngTable': 'services/fn/table/ng-table.fn',
+        // modal-select
+        'fn.modal.select': 'services/fn/modal/table-select.fn',
 
         // ------------------ services ------------------
         // common
@@ -159,6 +161,9 @@ let requireConfig = {
 
                 // angular plugin
                 'ng-table',
+
+                // babel
+                'scripts/vendor/polyfill.min.js',
                 
                 // standard
                 'css!styles/standard.css',

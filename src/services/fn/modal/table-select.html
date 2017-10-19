@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{state.title}}</h3>
+</div>
+<div class="modal-body" style="padding-bottom: 50px;">
+
+    <ng-table-select setting="state.table.setting" data="state.table.data"></ng-table-select>
+    
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="onClickOk()">确认</button>
+    <button class="btn btn-warning" type="button" ng-click="onClickCancel()">取消</button>
+</div>

@@ -1,6 +1,6 @@
 // angular-ui-bootstrap依赖的是bootstrap3，bootstrap4不支持
-define(['app'], function (app) {
-    app.controller('ModalController', function ($scope, $uibModal) {
+define(['app', 'fn.modal.select'], function (app) {
+    app.controller('ModalController', function ($scope, $uibModal, modalTableSelectFn) {
         let data = 'created by ModalController';
         
         $scope.onClickOpenModal = () => {
@@ -38,6 +38,45 @@ define(['app'], function (app) {
                 .then(() => {
                     console.log('rendered');
                 });
+        };
+
+        $scope.onClickOpenModalSelect = async () => {
+            let choicesData;
+            try {
+                choicesData = await modalTableSelectFn($uibModal, {
+                    table: {
+                        setting: {
+                            count: 10,
+                            filterCols: ['id', 'name'],
+                            cols: [{
+                                title: 'ID',
+                                field: 'id',
+                                sortable: 'id',
+                                show: true
+                            }, {
+                                title: 'Name',
+                                field: 'name',
+                                sortable: 'name',
+                                show: true
+                            }]
+                        },
+                        data: [{
+                            id: 1,
+                            name: 'lovesora',
+                            opt: 'opt1'
+                        }, {
+                            id: 2,
+                            name: 'loverem',
+                            opt: 'opt2'
+                        }]
+                    }
+                });
+            } catch (e) {
+                console.log(e);
+                choicesData = [];
+            } finally {
+                console.log(choicesData);
+            }
         };
     });
 

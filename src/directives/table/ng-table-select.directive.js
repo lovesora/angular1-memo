@@ -9,40 +9,48 @@ new function () {
             return {
                 scope: true,
                 templateUrl: config.templateUrl,
-                link: function (scope, elem, attr) {
-                    scope.setting = scope.$parent[attr['setting']];
+                link: function (scope, ele, attr) {
+                    scope.setting = commonFn.obj.getPropByStr(attr['setting'], scope.$parent);
                     scope.data = commonFn.obj.getPropByStr(attr['data'], scope.$parent);
+
+                    // ------------------ init ------------------
+                    scope.initNgTableData();
+
                 },
                 controller: function ($scope, NgTableParams, ngTableFilterFn) {
+                    console.log($scope);
                     // ------------------ conf ------------------ 
-                    $scope.tableCols = $scope.setting.cols;
-                    $scope.tableParams =  new NgTableParams({
-                        count: $scope.setting.count
-                    }, {
-                        dataset: [],
-                        paginationMaxBlocks: 7,
-                        paginationMinBlocks: 2,
-                        filterOptions: {
-                            filterDelay: 0,
-                            filterFn: ngTableFilterFn
-                        }
-                    });
+                    
                     // 初始化ng-table的数据
-                    let initNgTableData = () => {
+                    $scope.initNgTableData = () => {
+                        $scope.tableCols = $scope.setting.cols;
+                        $scope.tableParams =  new NgTableParams({
+                            count: $scope.setting.count
+                        }, {
+                            dataset: [],
+                            paginationMaxBlocks: 7,
+                            paginationMinBlocks: 2,
+                            filterOptions: {
+                                filterDelay: 0,
+                                filterFn: ngTableFilterFn
+                            }
+                        });
+
+                        $scope.filter = {
+                            value: '',
+                            filters: () => [{
+                                type: '|',
+                                rule: {
+                                    cols: $scope.setting.filterCols,
+                                    filterValue: $scope.filter.value
+                                }
+                            }]
+                        };
+
                         let dataset = $scope.data;
                         $scope.tableParams.settings({
                             dataset
                         });
-                    };
-                    $scope.filter = {
-                        value: '',
-                        filters: () => [{
-                            type: '|',
-                            rule: {
-                                cols: $scope.setting.filterCols,
-                                filterValue: $scope.filter.value
-                            }
-                        }]
                     };
     
                     // ------------------ event ------------------
@@ -52,9 +60,6 @@ new function () {
                     $scope.onClickRow = row => {
                         row.isActive = !row.isActive;
                     };
-                    
-                    // ------------------ init ------------------
-                    initNgTableData();
                 },
             };
         });
