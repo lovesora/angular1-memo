@@ -9,8 +9,7 @@ angular1.4.6 tech stack memo
 4. angular-ui-bootstrap 2.5
 5. angular-require 1.3
 6. jquery 3.2
-7. popper 1.12.5
-8. bootstrap 4.0
+7. bootstrap 3.0
 
 ## Usage
 ```bash
