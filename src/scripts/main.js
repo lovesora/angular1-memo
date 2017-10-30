@@ -16,6 +16,7 @@ let requireConfig = {
         'tab-horizontal': ['directives/tab/tab-horizontal.directive'],
         'ng-table-select': ['directives/table/ng-table-select.directive'],
 
+
         // ------------------ angular ------------------
         // angular
         'angular': [BOWER_DIR + 'angular/angular.min', '//cdn.bootcss.com/angular.js/1.4.6/angular.min'],
@@ -29,7 +30,6 @@ let requireConfig = {
         
 
         // ------------------ third part lib ------------------
-        // 'text': ['https://cdn.bootcss.com/require-text/2.0.12/text.min'],
         // jquery
         'jquery': [BOWER_DIR + 'jquery/dist/jquery.slim.min', '//cdn.bootcss.com/jquery/3.2.1/jquery.slim.min'],
         // jquery-plugin
@@ -37,8 +37,6 @@ let requireConfig = {
         
         // bootstrap
         'bootstrap3': [BOWER_DIR + 'bootstrap/dist/js/bootstrap.min', '//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min'],
-        // 'popper': ['//cdn.bootcss.com/popper.js/1.12.5/umd/popper.min'],
-        // 'bootstrap': ['//cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min'],
 
         // animation
         'animate.css': ['scripts/jquery/animation'],
@@ -58,6 +56,7 @@ let requireConfig = {
         // modal-select
         'fn.modal.select': 'services/fn/modal/table-select.fn',
 
+
         // ------------------ services ------------------
         // common
         'ajax': 'services/common/ajax.common',
@@ -66,6 +65,7 @@ let requireConfig = {
         'constant.api': 'services/constant/api.constant',
         'constant.response': 'services/constant/response.constant',
 
+        
         // ------------------ fetch ------------------ 
         'fetch.user.list': 'services/fetch/user/list.fetch'
     },
@@ -165,18 +165,9 @@ let requireConfig = {
                 // babel
                 'scripts/vendor/polyfill.min.js',
                 
-                // support
-                'css!styles/support.css',
-                // compatibility
-                'css!styles/compatibility.css',
-                // standard
-                'css!styles/standard.css',
-                // layout
-                'css!styles/header.css',
-                'css!styles/footer.css',
-                'css!styles/container.css',
-                // wedget
-                'css!styles/wedget.css'
+                // style
+                'animate.css',
+                'css!styles/style.css'
             ],
             exports: 'app'
         }
@@ -192,6 +183,6 @@ require.onError = function (err) {
 
 // directives
 let directives = ['left-sidebar', 'ripple-icon', 'tab-horizontal'];
-requirejs(['app', 'bootstrap3', 'animate.css'].concat(directives), function () {
+requirejs(['app', 'bootstrap3'].concat(directives), function () {
     angular.bootstrap(document, ['app']);
 });

@@ -27,10 +27,11 @@ define(['app', 'ng-table-select'], function (app) {
         }];
     });
 
-
     app.controller('NgTableSelectController', function ($scope, ngTableSelectConfValue, ngTableSelectDataService) {
-        $scope.setting = ngTableSelectConfValue;
-        $scope.data = ngTableSelectDataService.data();
-
+        $scope.tableData = {
+            setting: ngTableSelectConfValue,
+            data: ngTableSelectDataService.data(),
+            value: []
+        };
     });
 });

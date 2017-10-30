@@ -29,10 +29,7 @@ new function () {
             $scope.state = $scope.$resolve.state;
 
             $scope.onClickOk = () => {
-                
-                let result = $scope.state.table.data.filter(v => v.isActive);
-                
-                $uibModalInstance.close(result);
+                $uibModalInstance.close($scope.state.table.value);
             };
 
             $scope.onClickCancel = () => {

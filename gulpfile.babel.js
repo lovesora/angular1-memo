@@ -60,7 +60,7 @@ class Configs {
          * scss所在源文件夹
          * @type {String}
          */
-        this.scss = [`${this.srcDir}/**/*.scss`];
+        this.scss = [`${this.srcDir}/**/*.scss`, `!${this.srcDir}/**/_*.scss`];
 
         /**
          * css所在源文件夹

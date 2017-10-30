@@ -68,7 +68,8 @@ define(['app', 'fn.modal.select'], function (app) {
                             id: 2,
                             name: 'loverem',
                             opt: 'opt2'
-                        }]
+                        }],
+                        value: []
                     },
                     modal: {
                         title: 'test'

@@ -10,7 +10,6 @@ new function () {
                 scope: true,
                 templateUrl: config.templateUrl,
                 link: function (scope, ele, attr) {
-                    scope.setting = commonFn.obj.getPropByStr(attr['setting'], scope.$parent);
                     scope.data = commonFn.obj.getPropByStr(attr['data'], scope.$parent);
 
                     // ------------------ init ------------------
@@ -22,9 +21,9 @@ new function () {
                     
                     // 初始化ng-table的数据
                     $scope.initNgTableData = () => {
-                        $scope.tableCols = $scope.setting.cols;
+                        $scope.tableCols = $scope.data.setting.cols;
                         $scope.tableParams =  new NgTableParams({
-                            count: $scope.setting.count
+                            count: $scope.data.setting.count
                         }, {
                             dataset: [],
                             paginationMaxBlocks: 7,
@@ -40,13 +39,13 @@ new function () {
                             filters: () => [{
                                 type: '|',
                                 rule: {
-                                    cols: $scope.setting.filterCols,
+                                    cols: $scope.data.setting.filterCols,
                                     filterValue: $scope.filter.value
                                 }
                             }]
                         };
 
-                        let dataset = $scope.data;
+                        let dataset = $scope.data.data;
                         $scope.tableParams.settings({
                             dataset
                         });
@@ -58,6 +57,8 @@ new function () {
                     };
                     $scope.onClickRow = row => {
                         row.isActive = !row.isActive;
+
+                        $scope.data.value = $scope.data.data.filter(v => v.isActive);
                     };
                 },
             };
